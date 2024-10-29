@@ -1,0 +1,99 @@
+.footer {
+  position: relative;
+  background: url('https://img.freepik.com/free-photo/black-friday-sales-sign-neon-light_23-2151833112.jpg?size=626&ext=jpg&ga=GA1.1.1974615186.1708798045&semt=ais_hybrid') no-repeat center center/cover;
+  color: white;
+  padding: 3rem 0;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+   
+  }
+
+  .footer-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  // Default for large screens
+    gap: 2rem;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-section {
+    h2 {
+      margin-bottom: 1rem;
+      color: #4caf50;
+    }
+    p, ul {
+      line-height: 1.6;
+    }
+  }
+
+  .quick-links ul {
+    list-style: none;
+    li {
+      margin-bottom: 0.5rem;
+      a {
+        color: #4caf50;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+    input, textarea {
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 5px;
+      background: #f5f5f5;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      &:hover {
+        background-color: #388e3c;
+      }
+    }
+  }
+
+  // Mobile responsiveness
+  @media (max-width: 1024px) {
+    .footer-content {
+      grid-template-columns: 1fr 1fr;  // Adjust for medium screens (e.g., tablets)
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;  // Stack content in one column for small screens (mobile)
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;  // Adjust padding for extra small screens
+    .footer-section {
+      text-align: center;  // Center content on very small screens for better readability
+    }
+    .contact-form form input,
+    .contact-form form textarea {
+      width: 100%;  // Ensure input fields take full width on small screens
+    }
+  }
+}
